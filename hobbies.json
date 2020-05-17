@@ -1,0 +1,15 @@
+{"hobbies": 
+    [
+    {"hobby": "Cosplay", "desc": "Dress up as your favourite character from a book, movie, tv show or video game"},
+    {"hobby": "Push-ups", "desc": "Leave quarantine looking like Arnold"},        
+    {"hobby": "Meditate", "desc": "Find your inner peace"},        
+    {"hobby": "Sing a song", "desc": "Get ready for karaoke night when quarantine is over"},        
+    {"hobby": "Learn pen or coin tricks", "desc": "Show off for your online classmates"},
+    {"hobby": "Reconnect with a friend", "desc": "Physical distance does not mean social distance!"},
+    {"hobby": "Learn a magic trick", "desc": "Houdini has been real quiet since this thought entered your head.."},
+    {"hobby": "Learn to program", "desc": "Don't forget about us when you're rich"},
+    {"hobby": "Learn to cook a new meal", "desc": "Who doesn't love to eat?"},
+    {"hobby": "Recreate your favourite painting", "desc": "Unleash your inner artist"},
+    {"hobby": "Solve a puzzle", "desc": "Gotta make sure your brain stays in shape too!"}
+    ]
+}

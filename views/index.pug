@@ -1,0 +1,67 @@
+extends layout
+
+block layout-content
+  div.View.WelcomeView   
+    script.
+        var readAPI = async function() {
+            document.querySelector("div.Message").style.display = "inline";
+            document.querySelector("div.Title").style.display = "inline";
+            document.querySelector("div.startMessage").style.display = "none";
+            const response = await fetch("/hobbies");
+            const {hobbies, visits} = await response.json(); 
+            let randNum = Math.floor(Math.random() * (hobbies.length))
+            document.getElementById("name").innerHTML = hobbies[randNum].hobby;
+            document.getElementById("desc").innerHTML = hobbies[randNum].desc;
+            document.getElementById("viscount").innerHTML = "No. of hobbies generated: " + visits;
+            
+            
+        }
+
+    script.
+        var playMusic = function() {
+            var audio = document.getElementById("player");
+            audio.volume = 0.33;
+                if(audio.paused){
+                    audio.play();
+                    document.getElementById("playOrPause").innerHTML = "Pause";
+                } else {
+                    audio.pause();
+                    document.getElementById("playOrPause").innerHTML = "Play";
+                }   
+        }
+
+    script.
+        var about = async function() {
+            document.querySelector("div.startMessage").style.display = "none";
+            document.querySelector("div.Message").style.display = "inline";
+            document.querySelector("div.Title").style.display = "inline";
+            document.getElementById("name").innerHTML = "ABOUT";
+            document.getElementById("desc").innerHTML = "Press the 'Generate' button for a randomly generated social distance friendly activity." + 
+            " Press the 'Play' button to enjoy some relaxing music";
+        }
+
+    h1.Banner CONQUER COVID: A Social Distance Friendly Hobby/Activity Generator
+    div.startMessage
+        div.Title
+            h1 About
+            h3 Press the 'Generate' button for a randomly generated social distance friendly activity. Press the 'Play' button to enjoy some relaxing music
+            h4 No. of hobbies generated: #{visits} 
+
+    div.Message
+        div.Title
+            h1#name
+            h3#desc
+            h4#viscount No. of hobbies generated: #{visits} 
+    div.Buttons
+        a(onClick='playMusic()')
+            div.MusicButton#playOrPause Play
+            audio#player
+                source(src='./shootingStar.mp3')
+
+        b(onClick='readAPI()')
+            div.Button Generate
+
+        c(onClick='about()')
+            div.AboutButton About
+
+
